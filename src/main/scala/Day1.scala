@@ -1,12 +1,7 @@
 import scala.io.StdIn
 
 object Day1 extends App {
-  var input = ""
-  var line = ""
-  while ({line = StdIn.readLine(); line != ""}) {
-    input += s"$line,"
-  }
-  val reports = input.split(",").map(x => x.toInt)
+  val reports = Reader.readMultipleLinesFromInput().map(x => x.toInt)
   val zippedReports = reports zip reports.tail
 
   val result = zippedReports
